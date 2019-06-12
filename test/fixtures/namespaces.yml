@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: namespaces
+#
+#  id             :bigint           not null, primary key
+#  team           :string(255)
+#  application    :string(255)
+#  environment    :string(255)
+#  deleted_at     :datetime
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  envfiles_count :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  team: MyTeam1.<%= Time.now %>
+  application: MyApplication1.<%= Time.now %>
+  environment: MyEnvironment1.<%= Time.now %>
+  deleted_at: 2019-06-12 20:49:35
+
+two:
+  team: MyTeam2.<%= Time.now %>
+  application: MyApplication2.<%= Time.now %>
+  environment: MyEnvironment2.<%= Time.now %>
+  deleted_at: 2019-06-12 20:49:35

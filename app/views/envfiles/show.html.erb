@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @envfile.filename %>
+</p>
+
+<p>
+  <strong>Namespace:</strong>
+  <%= @envfile.namespace %>
+</p>
+
+<p>
+  <strong>Filetype:</strong>
+  <%= @envfile.filetype %>
+</p>
+
+<p>
+  <strong>File:</strong>
+  <pre>
+<%= @envfile.file.download %>
+  </pre>
+</p>
+
+<%= link_to 'Edit', edit_envfile_path(@envfile) %> |
+<%= link_to 'Back', envfiles_path %>

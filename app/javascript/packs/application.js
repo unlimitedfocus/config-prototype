@@ -14,7 +14,8 @@
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-import Begin from 'begin'
 
-console.log(Begin)
+// import Begin from 'begin'
+// console.log(Begin)
+
 console.log('Hello World from Webpacker')

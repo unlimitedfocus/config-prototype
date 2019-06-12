@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: envfiles
+#
+#  id           :bigint           not null, primary key
+#  filename     :string(255)
+#  namespace_id :bigint
+#  filetype     :integer
+#  deleted_at   :datetime
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  filename: MyFile1.<%= Time.now %>
+  namespace: one
+  filetype: 1
+  deleted_at: 2019-06-13 00:46:06
+
+two:
+  filename: MyFile2.<%= Time.now %>
+  namespace: two
+  filetype: 1
+  deleted_at: 2019-06-13 00:46:06

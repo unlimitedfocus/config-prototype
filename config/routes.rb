@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'home#index'
+  root to: 'application#index'
+
+  resources :envfiles
+  resources :namespaces
 end

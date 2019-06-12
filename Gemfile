@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'mini_magick', '~> 4.8'
 
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'paranoia'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -44,6 +45,7 @@ group :development do
   gem 'guard'
   gem 'guard-minitest'
   gem 'terminal-notifier-guard'
+  gem 'annotate'
 end
 
 group :test do
@@ -52,6 +54,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+
+  gem 'database_cleaner'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

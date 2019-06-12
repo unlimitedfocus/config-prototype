@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Envfiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Filename</th>
+      <th>Namespace</th>
+      <th>Filetype</th>
+      <th>Deleted at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @envfiles.each do |envfile| %>
+      <tr>
+        <td><%= envfile.filename %></td>
+        <td><%= envfile.namespace %></td>
+        <td><%= envfile.filetype %></td>
+        <td><%= envfile.deleted_at %></td>
+        <td><%= link_to 'Show', envfile %></td>
+        <td><%= link_to 'Edit', edit_envfile_path(envfile) %></td>
+        <td><%= link_to 'Destroy', envfile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Envfile', new_envfile_path %>

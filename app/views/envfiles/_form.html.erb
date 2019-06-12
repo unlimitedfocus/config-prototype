@@ -1,0 +1,37 @@
+<%= form_with(model: envfile, local: true) do |form| %>
+  <% if envfile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(envfile.errors.count, "error") %> prohibited this envfile from being saved:</h2>
+
+      <ul>
+      <% envfile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :filename %>
+    <%= form.text_field :filename %>
+  </div>
+
+  <div class="field">
+    <%= form.label :namespace_id %>
+    <%= form.text_field :namespace_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :filetype %>
+    <%= form.number_field :filetype %>
+  </div>
+
+  <div class="field">
+    <%= form.label :file %>
+    <%= form.file_field :file %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @namespace.team %>
+</p>
+
+<p>
+  <strong>Application:</strong>
+  <%= @namespace.application %>
+</p>
+
+<p>
+  <strong>Environment:</strong>
+  <%= @namespace.environment %>
+</p>
+
+<p>
+  <strong>Deleted at:</strong>
+  <%= @namespace.deleted_at %>
+</p>
+
+<%= link_to 'Edit', edit_namespace_path(@namespace) %> |
+<%= link_to 'Back', namespaces_path %>
