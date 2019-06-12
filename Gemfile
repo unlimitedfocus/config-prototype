@@ -12,11 +12,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 gem 'jbuilder', '~> 2.5'
 
-# gem 'devise'
+gem 'devise'
 # gem 'route_translator'
 # gem 'kaminari'
 # gem 'ransack'
 # gem 'foreman'
+# gem 'json-schema'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
