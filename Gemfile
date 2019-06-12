@@ -5,14 +5,19 @@ ruby '2.6.3'
 
 gem 'rails', '~> 5.2.3'
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+gem 'bootsnap', '>= 1.1.0', require: false
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer', platforms: :ruby
-
 gem 'jbuilder', '~> 2.5'
+
+# gem 'devise'
+# gem 'route_translator'
+# gem 'kaminari'
+# gem 'ransack'
+# gem 'foreman'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -21,7 +26,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
-gem 'bootsnap', '>= 1.1.0', require: false
 gem 'paranoia'
 
 group :development, :test do
@@ -56,6 +60,7 @@ group :test do
   gem 'chromedriver-helper'
 
   gem 'database_cleaner'
+  gem 'simplecov', require: false
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

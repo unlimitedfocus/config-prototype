@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 2019_06_12_160935) do
   end
 
   create_table "envfiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "filename"
-    t.bigint "namespace_id"
-    t.integer "filetype"
+    t.string "filename", null: false
+    t.bigint "namespace_id", null: false
+    t.integer "filetype", default: 0
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 2019_06_12_160935) do
   end
 
   create_table "namespaces", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "team"
-    t.string "application"
-    t.string "environment"
+    t.string "team", null: false
+    t.string "application", null: false
+    t.string "environment", null: false
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
