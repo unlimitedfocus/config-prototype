@@ -1,8 +1,11 @@
 require "application_system_test_case"
 
 class NamespacesTest < ApplicationSystemTestCase
-  setup do
-    @namespace = namespaces(:one)
+  include Devise::Test::IntegrationHelpers
+
+  def setup
+    sign_in FactoryBot.create(:user)
+    @namespace = FactoryBot.create(:namespace)
   end
 
   test "visiting the index" do
@@ -11,12 +14,13 @@ class NamespacesTest < ApplicationSystemTestCase
   end
 
   test "creating a Namespace" do
+      @new_namespace = FactoryBot.build(:namespace)
     visit namespaces_url
     click_on "New Namespace"
 
-    fill_in "Application", with: @namespace.application
-    fill_in "Environment", with: @namespace.environment
-    fill_in "Team", with: @namespace.team
+    fill_in "Application", with: @new_namespace.application
+    fill_in "Environment", with: @new_namespace.environment
+    fill_in "Team", with: @new_namespace.team
     click_on "Create Namespace"
 
     assert_text "Namespace was successfully created"

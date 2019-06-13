@@ -1,8 +1,12 @@
 require 'test_helper'
 
 class EnvfilesControllerTest < ActionDispatch::IntegrationTest
-  setup do
-    @envfile = envfiles(:one)
+  include Devise::Test::IntegrationHelpers
+
+  def setup
+    sign_in FactoryBot.create(:user)
+    @namespace = FactoryBot.create(:namespace)
+    @envfile = FactoryBot.create(:envfile, namespace: @namespace)
   end
 
   test "should get index" do

@@ -18,7 +18,7 @@
 <p>
   <strong>File:</strong>
   <pre>
-<%= @envfile.file.download %>
+<%= @envfile.file.download if @envfile.file.attached? %>
   </pre>
 </p>
 

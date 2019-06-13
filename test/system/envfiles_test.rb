@@ -1,8 +1,12 @@
 require "application_system_test_case"
 
 class EnvfilesTest < ApplicationSystemTestCase
-  setup do
-    @envfile = envfiles(:one)
+  include Devise::Test::IntegrationHelpers
+
+  def setup
+    sign_in FactoryBot.create(:user)
+    @namespace = FactoryBot.create(:namespace)
+    @envfile = FactoryBot.create(:envfile, namespace: @namespace)
   end
 
   test "visiting the index" do

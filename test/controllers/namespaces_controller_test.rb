@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class NamespacesControllerTest < ActionDispatch::IntegrationTest
-  setup do
-    @namespace = namespaces(:one)
+  include Devise::Test::IntegrationHelpers
+
+  def setup
+    sign_in FactoryBot.create(:user)
+    @namespace = FactoryBot.create(:namespace)
   end
 
   test "should get index" do
@@ -18,7 +21,8 @@ class NamespacesControllerTest < ActionDispatch::IntegrationTest
   # FIXME: use factory_bot
   test "should create namespace" do
     assert_difference('Namespace.count') do
-      post namespaces_url, params: { namespace: { application: @namespace.application, deleted_at: @namespace.deleted_at, environment: @namespace.environment, team: @namespace.team } }
+      @new_namespace = FactoryBot.build(:namespace)
+      post namespaces_url, params: { namespace: { application: @new_namespace.application, deleted_at: @new_namespace.deleted_at, environment: @new_namespace.environment, team: @new_namespace.team } }
     end
 
     assert_redirected_to namespace_url(Namespace.last)
