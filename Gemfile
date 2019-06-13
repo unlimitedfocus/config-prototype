@@ -13,6 +13,7 @@ gem 'webpacker'
 gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
+gem 'net-ldap'
 # gem 'route_translator'
 # gem 'kaminari'
 # gem 'ransack'

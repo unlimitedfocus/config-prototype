@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2019_06_12_165843) do
     t.string "username", null: false
     t.string "email"
     t.string "encrypted_password"
+    t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

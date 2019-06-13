@@ -12,6 +12,7 @@
 #  envfiles_count :integer
 #
 
+# TODO: exteract team to create team specific settings
 class Namespace < ApplicationRecord
   has_many :envfiles
 
