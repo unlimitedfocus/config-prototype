@@ -11,6 +11,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 gem 'jbuilder', '~> 2.5'
+gem 'turbolinks', '~> 5'
+gem 'jquery-rails'
+gem 'jquery-turbolinks'
 
 gem 'devise'
 gem 'net-ldap'
@@ -29,6 +32,7 @@ gem 'net-ldap'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
+# gem 'elastic-apm' # https://github.com/elastic/apm-agent-ruby
 
 gem 'paranoia'
 

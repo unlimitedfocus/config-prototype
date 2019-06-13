@@ -37,3 +37,6 @@ Things you may want to cover:
 * Deployment instructions
   - `brew install terminal-notifier`
 
+* Reference
+  - factory: https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md
+  - faker: https://github.com/stympy/faker
