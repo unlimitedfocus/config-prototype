@@ -15,6 +15,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable, :recoverable, :rememberable, :validatable
   devise :database_authenticatable, :registerable, :rememberable
 
+  before_save { self.username = username.downcase }
+
   validates :username, uniqueness: true
 
   def email_required?

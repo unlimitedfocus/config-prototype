@@ -15,7 +15,17 @@
 class Namespace < ApplicationRecord
   has_many :envfiles
 
-  def path
-    "/#{environment}/#{team}/#{application}"
+  before_save do
+    self.environment = environment.gsub(' ', '').underscore
+    self.team = team.gsub(' ', '').underscore
+    self.application = application.gsub(' ', '').underscore
+  end
+
+  def pathname
+    [
+      environment,
+      team,
+      application
+    ].join('/')
   end
 end
