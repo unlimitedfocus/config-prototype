@@ -14,6 +14,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'net-ldap'
+# gem 'devise-jwt'
+# gem 'rack-cors'
 # gem 'route_translator'
 # gem 'kaminari'
 # gem 'ransack'
@@ -31,6 +33,7 @@ gem 'net-ldap'
 gem 'paranoia'
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   gem 'pry'
