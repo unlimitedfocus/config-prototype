@@ -17,6 +17,18 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log(app)
 })
 
+/*
+import TurbolinksAdapter from 'vue-turbolinks';
+Vue.use(TurbolinksAdapter)
+
+document.addEventListener('turbolinks:load', () => {
+  var vueapp = new Vue({
+    el: "#hello",
+    template: '<App/>',
+    components: { App }
+  });
+});
+*/
 
 // The above code uses Vue without the compiler, which means you cannot
 // use Vue to target elements in your existing html templates. You would

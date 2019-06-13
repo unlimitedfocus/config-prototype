@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   resources :envfiles
   resources :namespaces
+
+  match "*path", to: "application#index", format: false, via: :get
 end
