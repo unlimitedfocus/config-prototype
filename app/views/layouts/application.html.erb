@@ -2,44 +2,49 @@
 <html>
   <head>
     <title>ConfigPrototype</title>
-    <%= Gon::Base.render_data %>
+    <%# Gon::Base.render_data %>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <%# javascript_pack_tag 'application' %>
-    <%= javascript_pack_tag 'hello_vue' %>
   </head>
 
   <body>
-    <%= link_to('Home', root_path) %> <br/>
-    <% if user_signed_in? %>
-      <li>
-        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to('Login', new_user_session_path) %>
-      </li>
-    <% end %>
-
     <%= yield %>
+    <%= javascript_pack_tag "pages/#{params[:controller]}/#{params[:action]}" %>
 
+    <% if user_signed_in? %>
+      <h1>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+      </h1>
+    <% end %>
     <!-- http://codkal.com/rails-how-to-remove-turbolinks/
-    <div data-turbolinks="false">
-      <a href="/">Turbolinks disabled</a>
-      <a href="/" data-turbolinks="true">Turbolinks enabled</a>
-      <a href="/">Disabled again</a>
-    </div>
+      <%= link_to('Home', root_path) %> <br/>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to('Login', new_user_session_path) %>
+        </li>
+      <% end %>
+
+      <div data-turbolinks="false">
+        <a href="/">Turbolinks disabled</a>
+        <a href="/" data-turbolinks="true">Turbolinks enabled</a>
+        <a href="/">Disabled again</a>
+      </div>
+      <script>
+        // GOOD WITH TURBOLINKS
+        $(document).on('turbolinks:load', function () {
+          console.log("This will run when dom is loaded!");
+        });
+      </script>
     -->
-    <script>
-      // GOOD WITH TURBOLINKS
-      $(document).on('turbolinks:load', function () {
-        console.log("This will run when dom is loaded!");
-      });
-    </script>
   </body>
 </html>

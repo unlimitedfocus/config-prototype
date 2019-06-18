@@ -5,8 +5,14 @@
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
+/*
 import Vue from 'vue'
+import Vuetify from 'vuetify'
+// import VueResource from 'vue-resource'
 import App from '../app.vue'
+
+Vue.use(Vuetify)
+// Vue.use(VueResource)
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
@@ -16,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   console.log(app)
 })
+*/
 
 /*
 import TurbolinksAdapter from 'vue-turbolinks';

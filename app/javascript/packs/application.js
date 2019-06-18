@@ -18,4 +18,21 @@
 // import Begin from 'begin'
 // console.log(Begin)
 
-console.log('Hello World from Webpacker')
+import Vue from 'vue'
+import Vuetify from 'vuetify'
+import Vuelidate from 'vuelidate'
+import App from '../app.vue'
+import TurbolinksAdapter from 'vue-turbolinks'
+
+Vue.use(Vuetify)
+Vue.use(Vuelidate)
+Vue.use(TurbolinksAdapter)
+
+document.addEventListener('turbolinks:load', () => {
+  const app = new Vue({
+    render: h => h(App)
+  }).$mount()
+  document.body.appendChild(app.$el)
+
+  console.log(app)
+})
