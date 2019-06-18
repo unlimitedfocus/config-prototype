@@ -11,11 +11,11 @@
     <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# javascript_pack_tag "pages/#{params[:controller]}/#{params[:action]}" %>
   </head>
 
   <body>
     <%= yield %>
-    <%= javascript_pack_tag "pages/#{params[:controller]}/#{params[:action]}" %>
 
     <% if user_signed_in? %>
       <h1>
