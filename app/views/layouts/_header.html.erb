@@ -2,44 +2,50 @@
   <div class="ui inverted fixed menu navbar page grid">
     <%= link_to 'Config Site', root_path, class: 'brand item' %>
 
-    <div id='team_select' class="ui dropdown item">
-      Team <i class="dropdown icon"></i>
+    <div id='team_select' class="ui dropdown selection item">
+      <input type="hidden" name="gender">
+      <i class="dropdown icon"></i>
+      <div class="default text">Team</div>
       <div class="menu">
-        <a class="item">English</a>
       </div>
     </div>
 
-    <div id='application_select' class="ui dropdown item">
-      Application <i class="dropdown icon"></i>
+    <div id='application_select' class="ui dropdown selection item">
+      <input type="hidden" name="gender">
+      <i class="dropdown icon"></i>
+      <div class="default text">Application</div>
       <div class="menu">
-        <a class="item">English</a>
       </div>
     </div>
 
-    <div id='environment_select' class="ui dropdown item">
-      Environment <i class="dropdown icon"></i>
+    <div id='environment_select' class="ui dropdown selection item">
+      <input type="hidden" name="gender">
+      <i class="dropdown icon"></i>
+      <div class="default text">Environment</div>
       <div class="menu">
-        <a class="item">English</a>
       </div>
     </div>
 
     <script>
-      $('#team_select')
-        .dropdown({
+      $('#team_select').dropdown({
+          clearable: true,
+          placeholder: 'Team',
           apiSettings: {
             url: '/teams/'
           },
           filterRemoteData: true
         });
-      $('#application_select')
-        .dropdown({
+      $('#application_select').dropdown({
+          clearable: true,
+          placeholder: 'Application',
           apiSettings: {
             url: '/applications/'
           },
           filterRemoteData: true
         });
-      $('#environment_select')
-        .dropdown({
+      $('#environment_select').dropdown({
+          clearable: true,
+          placeholder: 'Environment',
           apiSettings: {
             url: '/environments/'
           },
@@ -64,6 +70,17 @@
       </a>
     -->
     <div class="right menu">
+      <a id='clear_button' class="ui item">
+        Clear
+      </a>
+      <script>
+        $('#clear_button')
+          .on('click', function() {
+            $('.ui.dropdown')
+              .dropdown('clear')
+            ;
+          });
+      </script>
       <% if user_signed_in? %>
         <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'item') %>
       <% else %>
