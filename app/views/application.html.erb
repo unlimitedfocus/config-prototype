@@ -1,4 +1,16 @@
-<div id="users-new-view">
-  <users-new-view>
-  </users-new-view>
+<div class="ui cards">
+  <% @namespaces.each do |namespace| %>
+  <div class="card">
+    <div class="content">
+      <div class="header">Team: <%= namespace.team %></div>
+      <div class="description">
+        total applications: <%= Namespace.where(team: namespace.team).group(:team).count.values&.first %>
+      </div>
+    </div>
+    <%= link_to new_envfile_path, class: 'ui bottom attached button' do %>
+      <i class="add icon"></i>
+      Add New Envfile
+    <% end %>
+  </div>
+  <% end %>
 </div>
