@@ -15,13 +15,18 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="ui grid">
+      <%= render 'layouts/header' %>
+    </div>
+    <div class="ui page grid main">
+      <%= yield %>
+    </div>
 
-    <% if user_signed_in? %>
+    <%# if user_signed_in? %>
       <h1>
-        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        <%# link_to('Logout', destroy_user_session_path, method: :delete) %>
       </h1>
-    <% end %>
+    <%# end %>
     <!-- http://codkal.com/rails-how-to-remove-turbolinks/
       <%= link_to('Home', root_path) %> <br/>
       <% if user_signed_in? %>

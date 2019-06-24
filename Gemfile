@@ -14,7 +14,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'turbolinks', '~> 5'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
-gem 'gon' # https://github.com/gazay/gon/wiki
+gem 'semantic-ui-sass'
 
 gem 'devise'
 gem 'net-ldap'

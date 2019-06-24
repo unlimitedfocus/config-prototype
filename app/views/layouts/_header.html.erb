@@ -1,0 +1,114 @@
+      <div class="computer tablet only row">
+        <div class="ui inverted fixed menu navbar page grid">
+          <%= link_to 'DB Config', '/', class: 'brand item' %>
+          <%= link_to 'Home', '/', class: 'active item' %>
+          <%= link_to 'Namespaces', namespaces_path, class: 'item' %>
+          <%= link_to 'Envfiles', envfiles_path, class: 'item' %>
+          <!--
+          <a class="ui dropdown item">Dropdown
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <div class="item">Action</div>
+              <div class="item">Another action</div>
+              <div class="item">Something else here</div>
+              <div class="ui divider"></div>
+              <div class="item">Seperated link</div>
+              <div class="item">One more seperated link</div>
+            </div>
+          </a>
+          -->
+          <div class="right menu">
+            <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'item') %>
+            <% else %>
+              <%= link_to('Login', new_user_session_path, class: 'item') %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="mobile only row">
+        <div class="ui fixed inverted navbar menu">
+          <%= link_to 'DB Config', '/', class: 'brand item' %>
+          <a href="" class="brand item">DB Config</a>
+          <div class="right menu open">
+            <a href="" class="menu item">
+              <i class="reorder icon"></i>
+            </a>
+          </div>
+        </div>
+        <div class="ui vertical navbar menu">
+          <%= link_to 'Home', '/', class: 'active item' %>
+          <%= link_to 'Namespaces', namespaces_path, class: 'item' %>
+          <%= link_to 'Envfiles', envfiles_path, class: 'item' %>
+          <!--
+          <div class="ui item">
+            <div class="text">Dropdown</div>
+            <div class="menu">
+              <a class="item">Action</a>
+              <a class="item">Another action</a>
+              <a class="item">Something else here</a>
+              <a class="ui aider"></a>
+              <a class="item">Seperated link</a>
+              <a class="item">One more seperated link</a>
+            </div>
+          </div>
+          -->
+          <div class="menu">
+            <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'item') %>
+            <% else %>
+              <%= link_to('Login', new_user_session_path, class: 'item') %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+<!--
+<div class="ui inverted left fixed vertical menu">
+  <div class="active item"> 
+    <%= link_to 'Home', '/' %>
+  </div>
+  <div class="item"> 
+    <%= link_to 'Namespaces', namespaces_path %>
+  </div>
+  <div class="item"> 
+    <%= link_to 'Envfiles', envfiles_path %>
+  </div>
+  <div class="right menu">
+    <% if user_signed_in? %>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'right item') %>
+    <% else %>
+      <%= link_to('Login', new_user_session_path, class: 'right item') %>
+    <% end %>
+  </div>
+</div>
+
+<div class="ui fixed inverted main menu">
+  <div class="ui container">
+    <a class="launch icon item">
+      <i class="content icon"></i>
+    </a>
+
+      <div class="item">
+        Menu
+      </div>
+
+    <div class="right menu">
+
+      <div class="vertically fitted borderless item">
+        <iframe class="github" src="//ghbtns.com/github-btn.html?user=semantic-org&amp;repo=semantic-ui&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+      </div>
+
+      <div class="item">
+        <div class="ui hidden right aligned search input" id="search">
+          <div class="ui transparent icon input">
+            <input class="prompt" type="text" placeholder="Search...">
+            <i class="inverted search link icon" data-content="Search UI"></i>
+          </div>
+          <div class="results"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+-->
